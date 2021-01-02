@@ -17,3 +17,6 @@ Conway's Game of Life created using Python3, Numpy, and PyGame. Note that this p
 
 ### Authors
 - Dylan Legebokow
+
+### Notes
+- The color of a live cell will be one of three shades of green. The shade of green is irrelevant, as the coloring is purely for aesthetics
