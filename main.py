@@ -6,7 +6,7 @@ import random
 from patterns import *
 
 # Matrix variables
-width = 150
+width = 140
 height = 80
 cell_size = 6
 
@@ -29,18 +29,26 @@ def next_generation(matrix):
     for w in range(0, width):
         for h in range(0, height):
 
-            # Find adjacency matrix for each cell
-            if w == 0 and h != 0:
-                temp = matrix[w:w + 2, h - 1:h + 2]
-            elif w != 0 and h == 0:
-                temp = matrix[w - 1:w + 2, h:h + 2]
-            elif w == 0 and h == 0:
-                temp = matrix[w:w + 2, h:h + 2]
+            # Find which adjacent cells are alive
+            if w == 0 and h == 0:
+                neighbors = matrix[w,h+1] + matrix[w+1,h] + matrix[w+1,h+1]
+            elif w == 0 and h > 0 and (h < height - 1):
+                neighbors = matrix[w,h-1] + matrix[w, h+1] + matrix[w+1,h-1] + matrix[w+1,h] + matrix[w+1,h+1]
+            elif w == 0 and (h == height - 1):
+                neighbors = matrix[w,h-1] + matrix[w+1,h-1] + matrix[w+1,h]
+            elif w > 0 and (w < width - 1) and h == 0:
+                neighbors = matrix[w-1,h] + matrix[w+1,h] + matrix[w-1,h+1] + matrix[w,h+1] + matrix[w+1,h+1]
+            elif w > 0 and (w < width - 1) and h > 0 and (h < height - 1):
+                neighbors = matrix[w-1,h-1] + matrix[w-1,h] + matrix[w-1,h+1] + matrix[w,h-1] + matrix[w,h+1] + \
+                            matrix[w+1,h-1] + matrix[w+1,h] + matrix[w+1,h+1]
+            elif w > 0 and (w < width - 1) and (h == height - 1):
+                neighbors = matrix[w-1,h-1] + matrix[w-1,h] + matrix[w,h-1] + matrix[w+1,h-1] + matrix[w+1,h]
+            elif (w == width - 1) and h == 0:
+                neighbors = matrix[w-1,h] + matrix[w-1,h+1] + matrix[w,h+1]
+            elif (w == width - 1) and h > 0 and (h < height - 1):
+                neighbors = matrix[w-1,h-1] + matrix[w-1,h] + matrix[w-1,h+1] + matrix[w,h-1] + matrix[w,h+1]
             else:
-                temp = matrix[w - 1:w + 2, h - 1:h + 2]
-
-            # Determine the number of neighbors a cell has
-            neighbors = np.sum(temp) - matrix[w, h]
+                neighbors = matrix[w-1,h-1] + matrix[w,h-1] + matrix[w-1,h]
 
             # Determine if the cell will live or die
             if matrix[w, h] == 1 and (neighbors == 2 or neighbors == 3):
