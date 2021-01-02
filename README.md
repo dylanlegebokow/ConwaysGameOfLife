@@ -1,5 +1,5 @@
 # ConwaysGameOfLife
-Conway's Game of Life created using Python3, Numpy, and PyGame. Note that this project was made just for fun, and I did not try to optimize any of the code for speed or memory usage.
+Conway's Game of Life created using Python3, Numpy, and PyGame. This project was made just for fun, and there may be room for potential speed and memory improvements. I just found this project interesting, so I wanted to try to implement it myself.
 
 ### Prerequisits
 - Python3
@@ -17,3 +17,6 @@ Conway's Game of Life created using Python3, Numpy, and PyGame. Note that this p
 
 ### Authors
 - Dylan Legebokow
+
+### Notes
+- The color of a live cell will be one of three shades of green. The shade of green is irrelevant, as the coloring is purely for aesthetics
