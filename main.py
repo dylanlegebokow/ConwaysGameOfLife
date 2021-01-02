@@ -89,6 +89,16 @@ def main():
         matrix = np.zeros((width, height))
         for i in test_patterns:
             matrix[i[0], i[1]] = 1
+    elif cmd_input == '2':
+        # Enables running Paul Callahan's infinite growth pattern (5x5)
+        matrix = np.zeros((width, height))
+        for i in paul_callahan:
+            matrix[i[0], i[1]] = 1
+    elif cmd_input == '3':
+        # Enables running the 2x12 infinite growth pattern
+        matrix = np.zeros((width, height))
+        for i in two_by_twelve:
+            matrix[i[0], i[1]] = 1
     else:
         print("\nPlease execute the code with the following parameter:")
         print("  0 : Random initial array")

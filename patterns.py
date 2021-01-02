@@ -43,5 +43,8 @@ test_patterns = []
 test_patterns.extend(still_lifes + oscillators + spaceships + gosper_glider_gun)
 
 
-
-
+# Infinite growth patterns
+#   - Paul Callahan's 5x5 infinite growth pattern
+paul_callahan = [(67,38),(67,39),(67,42),(68,38),(68,41),(69,38),(69,41),(69,42),(70,40),(71,38),(71,40),(71,41),(71,42)]
+two_by_twelve = [(65,39),(65,40),(66,40),(67,40),(68,39),(68,40),(69,39),(69,40),(70,40),(71,39),(72,39),(72,40),(73,39),
+                 (73,40),(74,39),(76,39),(76,40)]
