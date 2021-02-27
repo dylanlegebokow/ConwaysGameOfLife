@@ -102,7 +102,9 @@ def main():
     else:
         print("\nPlease execute the code with the following parameter:")
         print("  0 : Random initial array")
-        print("  1 : Run testing array\n")
+        print("  1 : Run testing array")
+        print("  2 : Paul Callahan's infinite growth pattern")
+        print("  3 : 2x12 infinite growth pattern\n")
         print("For example:\n  $ python main.py 0")
         exit()
 
